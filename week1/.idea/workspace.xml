@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00504b74-55e8-4045-835f-e0b86c1ea4d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Equation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ChoosingOption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InputFromKeyboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SortArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StarTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,9 +40,37 @@
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="Calculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Calculator" />
+  <component name="RunManager" selected="Application.SortArray">
+    <configuration name="ChoosingOption" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ChoosingOption" />
+      <module name="week1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Equation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Equation" />
+      <module name="week1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InputFromKeyboard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InputFromKeyboard" />
+      <module name="week1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SortArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SortArray" />
+      <module name="week1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StarTower" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StarTower" />
       <module name="week1" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -48,7 +78,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Calculator" />
+        <item itemvalue="Application.SortArray" />
+        <item itemvalue="Application.StarTower" />
+        <item itemvalue="Application.InputFromKeyboard" />
+        <item itemvalue="Application.ChoosingOption" />
+        <item itemvalue="Application.Equation" />
       </list>
     </recent_temporary>
   </component>
@@ -60,7 +94,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666686885240</updated>
-      <workItem from="1666686886967" duration="3630000" />
+      <workItem from="1666686886967" duration="5495000" />
     </task>
     <servers />
   </component>

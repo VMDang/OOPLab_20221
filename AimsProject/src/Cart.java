@@ -79,7 +79,7 @@ public class Cart {
             }
         }
 
-        System.out.println("The disc has been removed");
+        System.out.println("The disc " + disc.getTitle() + " has been removed");
     }
 
     public double totalCost(){

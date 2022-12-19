@@ -1,12 +1,14 @@
-import aims.disc.DigitalVideoDisc;
+package test.disc;
+
+import aims.media.DigitalVideoDisc;
 
 import java.util.Collections;
 import java.util.ArrayList;
 
 public class TestPassingParameter {
     public static void main(String[] args) {
-        DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
-        DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cinderella");
+        DigitalVideoDisc jungleDVD = new DigitalVideoDisc("The Lion King","Animation","Roger Allers",87,19.95f);
+        DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Star Wars","Science Fiction","George Lucas",87,24.95f);
 
         ArrayList <DigitalVideoDisc> list = new ArrayList<DigitalVideoDisc>();
         list.add(jungleDVD);
@@ -31,6 +33,7 @@ public class TestPassingParameter {
     public static void changeTitle(DigitalVideoDisc dvd, String title){
         String oldTitle = dvd.getTitle();
         dvd.setTitle(title);
-        dvd = new DigitalVideoDisc(oldTitle);
+        dvd = new DigitalVideoDisc();
+        dvd.setTitle(oldTitle);
     }
 }

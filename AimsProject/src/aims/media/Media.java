@@ -57,4 +57,14 @@ public abstract class Media {
                 ", cost=" + cost +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Media media = (Media) o;
+
+        return title.equals(media.title);
+    }
 }

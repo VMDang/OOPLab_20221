@@ -33,9 +33,12 @@ public class Disc extends Media{
     @Override
     public String toString() {
         return "Disc{" +
-                "director='" + director + '\'' +
-                super.toString() +
+                "id=" + getId() +
+                ", title=" + getId() +
+                ", category=" + getCategory() +
+                ", director=" + director +
                 ", length=" + length +
+                ", cost=" + getCost() + '$' +
                 '}';
     }
 }

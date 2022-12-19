@@ -13,13 +13,9 @@ public class DigitalVideoDisc extends Disc implements Playable{
         setId(DigitalVideoDisc.nbDigitalVideoDiscs);
     }
 
+    @Override
     public String toString() {
-        return ("DVD - "  +   this.getId()+" - "
-                        +   this.getTitle()+" - "
-                        +   (this.getCategory()== null ? "null" : this.getCategory()) + " - "
-                        +   (this.getDirector()== null ? "null" : this.getDirector()) + " - "
-                        +   (this.getLength()== 0 ? " null" : this.getLength()) + ": "
-                        +   this.getCost() + "$");
+        return super.toString();
     }
 
     public static boolean isMatch(DigitalVideoDisc dvd, String title){

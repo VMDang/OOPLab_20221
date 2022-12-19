@@ -1,6 +1,11 @@
 package aims.media;
 
+import java.util.Comparator;
+
 public abstract class Media {
+
+    public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
+    public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
     private int id;
     private String title;
     private String category;
@@ -39,10 +44,11 @@ public abstract class Media {
     }
 
     public Media() {
-        super();
+
     }
 
     public Media(String title, String category, float cost) {
+        this();
         this.title = title;
         this.category = category;
         this.cost = cost;
@@ -52,9 +58,9 @@ public abstract class Media {
     public String toString() {
         return "Media{" +
                 "id=" + id +
-                ", title='" + title + '\'' +
-                ", category='" + category + '\'' +
-                ", cost=" + cost +
+                ", title=" + title +
+                ", category='" + category +
+                ", cost=" + cost + '$' +
                 '}';
     }
 

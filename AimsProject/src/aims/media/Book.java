@@ -9,7 +9,8 @@ public class Book extends Media{
     public Book() {
     }
 
-    public Book(List<String> authors) {
+    public Book(String title, String category, float cost, List<String> authors) {
+        super(title, category, cost);
         this.authors = authors;
     }
 
@@ -27,5 +28,16 @@ public class Book extends Media{
         }else {
             this.authors.remove(authorName);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + getId() +
+                ", title=" + getId() +
+                ", category=" + getCategory() +
+                ", authors=" + authors +
+                ", cost=" + getCost() + '$' +
+                '}';
     }
 }

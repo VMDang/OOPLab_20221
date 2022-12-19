@@ -16,6 +16,7 @@ public class Store {
             System.out.println("Store is overflow");
         }else{
             itemsInStore.add(media);
+            System.out.println("The disc " + media.getTitle() + " has been added");
         }
         return;
     }
@@ -25,6 +26,7 @@ public class Store {
             System.out.println("Store is emty");
         }else {
             itemsInStore.remove(media);
+            System.out.println("The media " + media.getTitle() + " has been removed");
         }
         return;
     }
@@ -35,4 +37,12 @@ public class Store {
         }
     }
 
+    public Media searchByTitle(String title) {
+        for(Media m : itemsInStore) {
+            if (m.getTitle().toLowerCase().contains(title.toLowerCase())) {
+                return m;
+            }
+        }
+        return null;
+    }
 }

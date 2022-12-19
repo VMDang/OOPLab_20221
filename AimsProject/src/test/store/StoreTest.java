@@ -10,14 +10,14 @@ public class StoreTest {
         DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars","Science Fiction","George Lucas",87,24.95f);
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin","Animation", "Guy Ritchie", 77,18.99f);
 
-        st.addDVD(dvd1);
-        st.addDVD(dvd2);
-        st.addDVD(dvd3);
+        st.addMedia(dvd1);
+        st.addMedia(dvd2);
+        st.addMedia(dvd3);
 
         System.out.println("The store before remove:");
         st.displayStore();
 
-        st.removeDVD(dvd2);
+        st.removeMedia(dvd2);
         System.out.println("The store after remove:");
         st.displayStore();
     }

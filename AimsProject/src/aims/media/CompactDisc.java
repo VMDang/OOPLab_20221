@@ -13,6 +13,15 @@ public class CompactDisc extends Disc implements Playable{
         this.tracks = tracks ;
     }
 
+    public CompactDisc(String title, String category, String director, String artist, float cost) {
+        setTitle(title);
+        setCategory(category);
+        setDirector(director);
+        setCost(cost);
+        this.artist = artist;
+
+    }
+
     public String getArtist() {
         return artist;
     }
@@ -22,6 +31,7 @@ public class CompactDisc extends Disc implements Playable{
             System.out.println("Cannot add track because existed");
         }else {
             tracks.add(s);
+            System.out.println("The track has been added");
         }
         return;
     }
@@ -47,7 +57,16 @@ public class CompactDisc extends Disc implements Playable{
 
     @Override
     public String toString() {
-        return super.toString();
+        return "CompactDisc{" +
+                "id=" + getId() +
+                ", title=" + getId() +
+                ", category=" + getCategory() +
+                ", director=" + getDirector() +
+                ", artist=" + artist +
+                ", tracks=" + tracks +
+                ", length=" + getLength() +
+                ", cost=" + getCost() + '$' +
+                '}';
     }
 
     @Override

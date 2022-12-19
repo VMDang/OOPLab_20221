@@ -1,3 +1,7 @@
+package aims.store;
+
+import aims.media.DigitalVideoDisc;
+
 public class Store {
     private static final int MAX_ITEMS = 100;
     private DigitalVideoDisc itemsInStore[] = new DigitalVideoDisc[MAX_ITEMS];

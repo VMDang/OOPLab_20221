@@ -11,6 +11,10 @@ public class Store {
     private static final int MAX_ITEMS = 100;
     private List<Media> itemsInStore = new ArrayList<Media>();
 
+    public List<Media> getItemsInStore() {
+        return itemsInStore;
+    }
+
     public void addMedia(Media media){
         if (itemsInStore.size() >= MAX_ITEMS){
             System.out.println("Store is overflow");

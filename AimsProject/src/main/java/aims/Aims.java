@@ -1,8 +1,10 @@
 package aims;
 
 import aims.cart.Cart;
+import aims.exception.PlayerException;
 import aims.media.*;
 import aims.store.Store;
+import javafx.collections.transformation.FilteredList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,7 +69,11 @@ public class Aims {
                     cart.addMedia(media);
                     break;
                 case 2:
-                    cart.playMedia(media);
+                    try {
+                        cart.playMedia(media);
+                    } catch (PlayerException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case 0:
                     return;
@@ -118,7 +124,11 @@ public class Aims {
                     if (m == null) {
                         System.out.println("No media with title: " + title + " found");
                     } else {
-                        cart.playMedia(m);
+                        try {
+                            cart.playMedia(m);
+                        } catch (PlayerException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
                 break;
@@ -128,7 +138,7 @@ public class Aims {
         }
     }
 
-    public static void chooseCartMenu() {
+    public static void chooseCartMenu() throws PlayerException {
         while (true) {
             cartMenu();
             int choose = sc.nextInt();
@@ -141,7 +151,7 @@ public class Aims {
                     if (c == 0) {
                         System.out.println("Enter id:");
                         int id = sc.nextInt();
-                        Media m = cart.searchById(id);
+                        FilteredList<Media> m = cart.searchById(id);
                         if (m == null) {
                             System.out.println("No item with id: " + id + " found");
                         } else {
@@ -152,7 +162,7 @@ public class Aims {
                         sc.nextLine();
                         System.out.println("Enter title:");
                         String title = sc.nextLine();
-                        Media m = cart.searchByTitle(title);
+                        FilteredList<Media> m = cart.searchByTitle(title);
                         if (m == null) {
                             System.out.println("No item with title: " + title + " found");
                         } else {
@@ -178,11 +188,11 @@ public class Aims {
                 {
                     System.out.println("Enter media title to remove");
                     String title = sc.nextLine();
-                    Media m = cart.searchByTitle(title);
+                    FilteredList<Media> m = cart.searchByTitle(title);
                     if (m == null) {
                         System.out.println("No item with title: " + title + " found");
                     } else {
-                        cart.removeMedia(m);
+                        cart.removeMedia(m.get(0));
                     }
                 }
                 break;
@@ -190,11 +200,11 @@ public class Aims {
                 {
                     System.out.println("Enter media title to play");
                     String title = sc.nextLine();
-                    Media m = cart.searchByTitle(title);
+                    FilteredList<Media> m = cart.searchByTitle(title);
                     if (m == null) {
                         System.out.println("No item with title: " + title + " found");
                     } else {
-                        cart.playMedia(m);
+                        cart.playMedia(m.get(0));
                     }
                 }
                 break;
@@ -312,7 +322,11 @@ public class Aims {
                     break;
                 case 3:
                     cart.displayCart();
-                    chooseCartMenu();
+                    try {
+                        chooseCartMenu();
+                    } catch (PlayerException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case 0:
                     System.out.println("Bye bye");

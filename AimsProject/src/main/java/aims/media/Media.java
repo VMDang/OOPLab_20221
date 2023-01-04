@@ -73,4 +73,12 @@ public abstract class Media {
 
         return title.equals(media.title);
     }
+
+    public boolean isMatch(String title) {
+        return this.title.equals(title);
+    }
+
+    public boolean isMatch(int id) {
+        return (this.id == id);
+    }
 }

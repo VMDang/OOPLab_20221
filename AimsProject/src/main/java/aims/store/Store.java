@@ -2,6 +2,8 @@ package aims.store;
 
 import aims.media.DigitalVideoDisc;
 import aims.media.Media;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,9 +11,9 @@ import java.util.List;
 public class Store {
 
     private static final int MAX_ITEMS = 100;
-    private List<Media> itemsInStore = new ArrayList<Media>();
+    private ObservableList<Media> itemsInStore = FXCollections.observableArrayList();
 
-    public List<Media> getItemsInStore() {
+    public ObservableList<Media> getItemsInStore() {
         return itemsInStore;
     }
 
@@ -21,6 +23,13 @@ public class Store {
         }else{
             itemsInStore.add(media);
             System.out.println("The disc " + media.getTitle() + " has been added");
+        }
+        return;
+    }
+
+    public void addMedia(Media ...media){
+        for (int i = 0; i < media.length; i++) {
+            addMedia(media[i]);
         }
         return;
     }

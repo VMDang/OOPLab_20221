@@ -1,16 +1,18 @@
 package aims.cart;
 
+import aims.exception.PlayerException;
 import aims.media.Book;
 import aims.media.CompactDisc;
 import aims.media.DigitalVideoDisc;
 import aims.media.Media;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 public class Cart {
-    private List<Media> itemsOrdered = new ArrayList<Media>();
+    private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 
     public void addMedia(Media media){
         if (!itemsOrdered.contains(media)){
@@ -20,7 +22,7 @@ public class Cart {
         else System.out.println("The media cannot add because existed");
     }
 
-    public List<Media> getItemsOrdered() {
+    public ObservableList<Media> getItemsOrdered() {
         return itemsOrdered;
     }
 
@@ -56,7 +58,7 @@ public class Cart {
         System.out.println("***************************************************");
     }
 
-    public void playMedia(Media media) {
+    public void playMedia(Media media) throws PlayerException {
         if (media instanceof CompactDisc) {
             ((CompactDisc) media).play();
         }
@@ -67,22 +69,25 @@ public class Cart {
             System.out.println("Book cannot play");
         }
     }
-    public Media searchByTitle(String title) {
-        for(Media m : itemsOrdered) {
-            if (m.getTitle().toLowerCase().contains(title.toLowerCase())) {
-                return m;
-            }
-        }
-        return null;
+    public FilteredList<Media> searchByTitle(String title) {
+        FilteredList<Media> result = new FilteredList<>(this.itemsOrdered, media -> {return media.isMatch(title);});
+
+//        for(Media m : itemsOrdered) {
+//            if (m.getTitle().toLowerCase().contains(title.toLowerCase())) {
+//                return m;
+//            }
+//        }
+        return result;
     }
 
-    public Media searchById(int id) {
-        for(Media m : itemsOrdered) {
-            if (m.getId() == id) {
-                return m;
-            }
-        }
-        return null;
+    public FilteredList<Media> searchById(int id) {
+        FilteredList <Media> result = new FilteredList<>(this.itemsOrdered, media -> {return media.isMatch(id);});
+//        for(Media m : itemsOrdered) {
+//            if (m.getId() == id) {
+//                return m;
+//            }
+//        }
+        return result;
     }
 
     public void sortByTitleCost() {
@@ -91,5 +96,9 @@ public class Cart {
 
     public void sortByCostTitle() {
         Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+    }
+
+    public void emptyCart() {
+        this.itemsOrdered.clear();
     }
 }

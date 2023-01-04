@@ -1,5 +1,7 @@
 package aims.media;
 
+import aims.exception.PlayerException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,7 +72,7 @@ public class CompactDisc extends Disc implements Playable{
     }
 
     @Override
-    public void play() {
+    public void play() throws PlayerException {
         System.out.println("Playing : " + this.getTitle());
         System.out.println("Track length: " + this.getLength());
         for (Track s:
